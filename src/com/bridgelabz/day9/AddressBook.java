@@ -1,34 +1,41 @@
 package com.bridgelabz.day9;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
-    static Scanner sc = new Scanner(System.in);
-    static ArrayList<Person> adressBook = new ArrayList<Person>();
-    public static void main(String[] args) {
-        System.out.println("Welcome to the Address Book Problem");
-        System.out.println("Enter a first name:");
-        String firstName=sc.next();
-        System.out.println("Enter a last name:");
-        String lastName=sc.next();
-        System.out.println("Enter a Address:");
-        String address=sc.next();
-        System.out.println("Enter a City name:");
-        String city=sc.next();
-        System.out.println("Enter a state:");
-        String state=sc.next();
-        System.out.println("Enter a email:");
-        String email=sc.next();
-        System.out.println("Enter a zip code:");
-        int  zip=sc.nextInt();
-        System.out.println("Enter a phone number:");
-        long phoneNumber=sc.nextLong();
+    ArrayList<Contacts> Book = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
-        Person details1=new Person(firstName, lastName, address,  city, state, email,  zip, phoneNumber);
-        adressBook.add(details1);
-        System.out.print(adressBook);
-        System.out.println("succesfully created contacts");
+    public void AddDetails() {
+
+        Scanner scanner = new Scanner(System.in);
+        Contacts details = new Contacts();
+        System.out.println("Enter the First Name of person");
+        details.setFirstName(scanner.nextLine());
+        System.out.println("Enter the Last Name of person");
+        details.setLastName(scanner.nextLine());
+        System.out.println("Enter the Address Name of person");
+        details.setAddress(scanner.nextLine());
+        System.out.println("Enter the City Name of person");
+        details.setCity(scanner.nextLine());
+        System.out.println("Enter the State Name of person");
+        details.setState(scanner.nextLine());
+        System.out.println("Enter the Email of person");
+        details.setEmail(scanner.nextLine());
+        System.out.println("Enter the Zip code of person");
+        details.setZipCode(scanner.nextInt());
+        System.out.println("Enter the Phone number of person");
+        details.setPhoneNumber(scanner.nextInt());
+
+        Book.add(details);
+
+        System.out.println(Book);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to Address Book Management System");
+        AddressBook details = new AddressBook();
     }
 }
-
